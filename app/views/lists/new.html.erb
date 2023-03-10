@@ -1,5 +1,18 @@
-<%= form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+
+<form>
+  <div class="mb-3 p-2 mx-20">
+    <%= simple_form_for (@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%= link_to "Cancel", :back %>
+      <%= f.submit %>
+
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="name" class="form-control" id="exampleInputname1" aria-describedby="nameHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputimage1" class="form-label">Photo</label>
+      <input type="photo" class="form-control" id="exampleInputPhoto1">
+    </div>
+  <% end %>
+</form>

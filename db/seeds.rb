@@ -26,3 +26,10 @@ Movie.create(title: "The Social Network", overview: "Harvard student Mark Zucker
 Movie.create(title: "The Avengers", overview: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.", poster_url: "https://image.tmdb.org/t/p/original/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg", rating: 7.7)
 
 Movie.create(title: "Eternal Sunshine of the Spotless Mind", overview: "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.", poster_url: "https://image.tmdb.org/t/p/original/6yMoJp8JNx8X8C0IgOFMz5WkMj.jpg", rating: 8.3)
+
+require "open-uri"
+
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+list = list.new(title: "NES", body: "A great console")
+list.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+list.save

@@ -44,7 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_170234) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "comment"
-    t.integer "rating"
     t.bigint "movie_id", null: false
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false
@@ -63,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_170234) do
     t.string "title"
     t.string "overview"
     t.string "poster_url"
-    t.integer "rating"
+    t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
